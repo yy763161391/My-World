@@ -14,8 +14,9 @@
             $('#submit-add').on('click',function(){
                 var data = $('#student-form').serialize();
                 $.ajax({
-                    url:'https://api.duyiedu.com/api/student/addStudent?appkey=yinwensong_1550025623499',
+                    url:'http://api.duyiedu.com/api/student/addStudent?appkey=yinwensong_1550025623499',
                     data : data,
+                    dataType:'jsonp',
                     success:function(){
                         alert('新增成功');
                         $('.student-list').trigger('click');
@@ -26,8 +27,8 @@
         getData:function(){
             var self = this;
             $.ajax({
-                    url: 'https://api.duyiedu.com/api/student/findAll?appkey=yinwensong_1550025623499',
-                    dataType: 'json',
+                    url: 'http://api.duyiedu.com/api/student/findAll?appkey=yinwensong_1550025623499',
+                    dataType: 'jsonp',
                     success: function (data) {
                         self.dataList = data;
                         self.renderDom();
@@ -80,9 +81,9 @@
 
  
                     $.ajax({
-                        url:'https://api.duyiedu.com/api/student/updateStudent?appkey=yinwensong_1550025623499',
+                        url:'http://api.duyiedu.com/api/student/updateStudent?appkey=yinwensong_1550025623499',
                         data:data,
-                        dataType: 'json',
+                        dataType: 'jsonp',
                         success:function(){
                                 alert('提交成功');     
                                 $('.modal').hide();
@@ -99,8 +100,9 @@
                 $('.del-modal').show();
                 $('.sure-btn').on('click',function(){
                     $.ajax({
-                    url:'https://api.duyiedu.com/api/student/delBySno?appkey=yinwensong_1550025623499',
+                    url:'http://api.duyiedu.com/api/student/delBySno?appkey=yinwensong_1550025623499',
                     data:{sNo:num},
+                    dataType:'jsonp',
                     success:function(){
                         alert('删除成功');
                         $('.del-modal').hide();

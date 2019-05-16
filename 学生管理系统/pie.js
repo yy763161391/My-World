@@ -36,7 +36,7 @@
             getData: function () {
                 var self = this;
                 $.ajax({
-                    url: 'api.duyiedu.com/api/student/findAll?appkey=yinwensong_1550025623499',
+                    url: 'https://api.duyiedu.com/api/student/findAll?appkey=yinwensong_1550025623499',
                     dataType: 'json',
                     success: function (data) {
                         self.getArearChart(data.data);
